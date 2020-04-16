@@ -15,3 +15,6 @@ Use
 make start
 ```
 for start web server
+
+http://localhost:8082/request
+http://localhost:8082/admin/requests
