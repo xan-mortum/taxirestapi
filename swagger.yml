@@ -1,0 +1,61 @@
+---
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: taxirestapi
+consumes:
+  - application/json
+paths:
+  /request:
+    get:
+      produces:
+        - application/json
+      operationId: request
+      responses:
+        200:
+          description: 'get request'
+          schema:
+            type: object
+        400:
+          description: Bad Request
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: Fatal
+          schema:
+            $ref: "#/definitions/Error"
+  /admin/requests:
+    get:
+      produces:
+        - application/json
+      operationId: requests
+      responses:
+        200:
+          description: 'list of requests'
+          schema:
+            type: object
+        400:
+          description: Bad Request
+          schema:
+            $ref: "#/definitions/Error"
+        500:
+          description: Fatal
+          schema:
+            $ref: "#/definitions/Error"
+definitions:
+  Error:
+    description: Error
+    type: object
+    properties:
+      code:
+        description: error code
+        type: string
+      detail:
+        description: a human-readable explanation specific to this occurrence of the problem.
+        example: Value of ID must be an integer
+        type: string
+      attributes:
+        description: values for error code placeholders
+        type: object
+        additionalProperties:
+          type: string
