@@ -18,11 +18,13 @@ func NewTaxiHandler(logger components.Logger, db *components.DB) *TaxiHandler {
 	}
 }
 
+//возвращаем случайное значение
 func (handler *TaxiHandler) RequestHandler(params operations.RequestParams) middleware.Responder {
 	request := handler.DB.GetRequest()
 	return operations.NewRequestOK().WithPayload(request)
 }
 
+//возвращаем все значения
 func (handler *TaxiHandler) RequestsHandler(params operations.RequestsParams) middleware.Responder {
 	requests := handler.DB.GetRequests()
 	return operations.NewRequestsOK().WithPayload(requests)

@@ -2,6 +2,7 @@ package components
 
 import "sync"
 
+//потокобезопасный map
 type Counter struct {
 	mx       sync.RWMutex
 	counters map[string]int

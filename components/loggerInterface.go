@@ -1,5 +1,7 @@
 package components
 
+//интерейс для реализации рекомендации использования интерфейсов и строгой утиной типизации для разрыва зависимостей
+//используя этот интерфейс в своих структурах я могу добавлять люой логер который удовлетворяет условия
 type Logger interface {
 	// Fatal is equivalent to l.Critical followed by a call to os.Exit(1).
 	Fatal(args ...interface{})
